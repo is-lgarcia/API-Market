@@ -12,11 +12,12 @@ public class ComprasProducto {
 
     private Integer cantidad;
 
-    private BigDecimal total;
+    private Double total;
 
     private Boolean estado;
 
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
@@ -40,11 +41,11 @@ public class ComprasProducto {
         this.cantidad = cantidad;
     }
 
-    public BigDecimal getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 
@@ -55,4 +56,21 @@ public class ComprasProducto {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
 }
