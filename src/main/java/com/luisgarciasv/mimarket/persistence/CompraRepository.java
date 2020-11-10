@@ -34,6 +34,16 @@ public class CompraRepository implements PurchaseRepository {
 
     @Override
     public Purchase save(Purchase purchase) {
+
+        System.out.println("ClientId: " + purchase.getClientId());
+        System.out.println("Comment: "+purchase.getComment());
+        System.out.println("Date: "+purchase.getDate().toString());
+        System.out.println("Item 1: "+purchase.getItems().get(0).getProductId());
+        System.out.println("PayMethod: "+purchase.getPaymentMethod());
+        System.out.println("State: "+purchase.getState());
+        System.out.println("CompraId: "+purchase.getPurchaseId());
+
+
         Compra compra = mapper.toCompra(purchase);
         compra.getProductos().forEach(producto -> producto.setCompra(compra));
 

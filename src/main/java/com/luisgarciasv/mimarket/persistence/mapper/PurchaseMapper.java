@@ -1,9 +1,7 @@
 package com.luisgarciasv.mimarket.persistence.mapper;
 
 import com.luisgarciasv.mimarket.domain.Purchase;
-import com.luisgarciasv.mimarket.domain.PurchaseItem;
 import com.luisgarciasv.mimarket.persistence.entity.Compra;
-import com.luisgarciasv.mimarket.persistence.entity.ComprasProducto;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -11,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {PurchaseItem.class})
+@Mapper(componentModel = "spring", uses = {PurchaseItemMapper.class})
 public interface PurchaseMapper {
 
     @Mappings({
